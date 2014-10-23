@@ -19,8 +19,6 @@ TrelloClone.Views.NewBoards = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
 
-    console.log($(event.target)) // debugging
-    debugger
     var attrs = $(event.target).serializeJSON();
     this.model.set(attrs);
     // no logic yet for if this view/template is for editing as well
@@ -33,7 +31,7 @@ TrelloClone.Views.NewBoards = Backbone.View.extend({
     });
 
     function success() {
-      Backbone.history.navigate("boards/index", { trigger: true })
+      Backbone.history.navigate("boards", { trigger: true })
       // redirect to index upon successful creation
       // I forget exactly what trigger:true does
     };

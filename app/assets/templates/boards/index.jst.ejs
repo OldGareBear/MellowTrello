@@ -3,7 +3,7 @@
 <ul id='outer'>
 <% boards.each(function(board) { %>
   <li>
-    <%= board.get('title') %>
+    <a href="#/boards/<%= board.id %>">"<%= board.escape('title') %>"</a>
   </li>
 <% }) %>
 <ul>

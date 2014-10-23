@@ -1,0 +1,15 @@
+<h1><%= board.escape("title") %></h1>
+
+<p>This board was created by User #<%= board.get("user_id") %></p>
+
+<h2>Lists</h2>
+
+<ul>
+  <% board.lists().each(function(list) { %>
+  <li>
+    <%= list.get("title") %>
+  </li>
+  <% }) %>
+</ul>
+
+<button id="new-list">Add a New List</button>

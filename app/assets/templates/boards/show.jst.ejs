@@ -1,6 +1,7 @@
 <h1><%= board.escape("title") %></h1>
 
-<p>This board was created by User #<%= board.get("user_id") %></p>
+
+<p>This board was created by User #<%= board.escape("user_id") %></p>
 
 <h2>Lists</h2>
 
@@ -12,4 +13,4 @@
   <% }) %>
 </ul>
 
-<button id="new-list">Add a New List</button>
+<button id="new-list-form">Add a New List</button>

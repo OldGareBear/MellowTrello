@@ -18,5 +18,9 @@ TrelloClone.Models.Board = Backbone.Model.extend({
     }
 
     return this._lists;
+  },
+
+  nextOrd: function() {
+    return this._lists.length + 1
   }
 });

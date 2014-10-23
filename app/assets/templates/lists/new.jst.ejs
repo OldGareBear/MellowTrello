@@ -1,0 +1,9 @@
+<form id="new-list-form">
+  <label for="list_title"></label>
+  <input type="text" id="list_title" name="list[title]" value="Add a list...">
+
+  <input type="hidden" name="list[board_id]" value="<%= board.id %>">
+  <input type="hidden" name="list[ord]" value="<% board.nextOrd() %>">
+
+  <input id="submit-new-list" type="submit" value="Save">
+</form>

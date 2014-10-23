@@ -1,0 +1,9 @@
+<h1>Boards</h1>
+
+<ul id='outer'>
+<% boards.each(function(board) { %>
+  <li>
+    <%= board.get('title') %>
+  </li>
+<% }) %>
+<ul>

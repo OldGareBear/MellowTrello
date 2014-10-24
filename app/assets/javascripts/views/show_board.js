@@ -2,6 +2,7 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
   initialize: function() {
     this.subViews = [];
     this.lists = this.model.lists();
+
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.lists, "add sync", this.render);
   },
@@ -22,10 +23,12 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
       var newView = new TrelloClone.Views.IndexCards({
         collection: list.cards()
       });
-      this.$('.insert-cards').html(newView.render().$el);
+      console.log('.insert-cards' + list.id)
+      this.$('.insert-cards' + list.id).append(newView.render().$el);
       that.subViews.push(newView);
     });
 
+    // debugger
     return this;
   },
 
@@ -92,8 +95,8 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
     var card = new TrelloClone.Models.Card();
     card.set(attrs);
 
-    // debugger
-
     this.list.cards().create(card);
+
+    this.render();
   }
 });

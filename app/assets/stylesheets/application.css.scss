@@ -45,6 +45,10 @@ div.one-list {
   width:250px;
 }
 
+div.one-list > p {
+  font-weight: bold;
+}
+
 button.destroy-list {
   float:left;
   display: inline;
@@ -59,7 +63,7 @@ li > a {
   font-weight: bold;
 }
 
-input#submit-new-list {
+input#submit-new-list, input#submit-new-card {
   background-color: green;
   color: white;
   font-weight: bold;

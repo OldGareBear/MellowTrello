@@ -41,7 +41,8 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
   events: {
     "click button.new-list": "newListForm",
     "submit form.new-list": "submitNewList",
-    "click button.new-card": "newCardForm"
+    "click button.new-card": "newCardForm",
+    "submit form.new-card": "submitNewCard"
   },
 
   newListForm: function(event) {
@@ -58,7 +59,7 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
   },
 
   submitNewList: function(event) {
-    event.preventDefault(); // not really necessary
+    event.preventDefault();
 
     var attrs = $(event.target).serializeJSON();
     var list = new TrelloClone.Models.List();
@@ -68,19 +69,31 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
   },
 
   newCardForm: function(event) {
-    console.log("the newCardForm even has triggered");
-    event.preventDefault(); // not really necessary
-    // get list from id of div containing the button
     var list_id = $(event.target).parent().attr("id");
-    var list = this.lists.get(list_id);
-    console.log("list" + list);
+    // save list as ivar; can be reused in submitNewCard
+    this.list = this.lists.get(list_id);
 
     var form = JST["cards/new"];
     var content = form({
-      list: list
+      list: this.list
     });
-    console.log("form" + form)
 
-    this.$("div.one-list#"+list_id).append(content);
+    if (this.$("form.new-card").length === 0) {
+      this.$("div.one-list#"+list_id).append(content);
+    } else {
+      this.$("form.new-card").remove();
+    }
+  },
+
+  submitNewCard: function(event) {
+    event.preventDefault();
+
+    var attrs = $(event.target).serializeJSON();
+    var card = new TrelloClone.Models.Card();
+    card.set(attrs);
+
+    // debugger
+
+    this.list.cards().create(card);
   }
 });

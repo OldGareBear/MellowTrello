@@ -15,3 +15,52 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar.navbar-default {
+  background-color: #2C6AA9;
+}
+
+html {
+  height: 100%;
+  background-color: #3383D3;
+}
+
+div.backdrop {
+  background-color: #3383D3;
+}
+
+div.navbar-header > a.navbar-brand {
+  color: white;
+}
+
+.board-display > h1 {
+  color: white;
+}
+
+div.one-list {
+  float: left;
+  padding: 10px;
+  margin: 5px;
+  background-color: #CCC;
+  width:250px;
+}
+
+button.destroy-list {
+  float:left;
+  display: inline;
+}
+
+button.new-card-form {
+  float: left;
+}
+
+li > a {
+  color: white;
+  font-weight: bold;
+}
+
+input#submit-new-list {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}

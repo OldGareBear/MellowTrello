@@ -1,3 +1,4 @@
+
 <h1><%= board.escape("title") %></h1>
 
 
@@ -5,12 +6,18 @@
 
 <h2>Lists</h2>
 
-<ul>
+<div class="all-lists">
   <% board.lists().each(function(list) { %>
-  <li>
-    <%= list.get("title") %>
-  </li>
-  <% }) %>
-</ul>
+  <div class="one-list">
+    <p><%= list.get("title") %></p>
+    <button class="destroy-list" id="<%= list.id %>">
+      Delete
+    </button>
 
-<button id="new-list-form">Add a New List</button>
+    <button class="new-card">Add new card</button>
+    <div id="insert-cards"></div>
+  </div>
+  <% }) %>
+</div>
+
+<button class="new-list">Add a New List</button>

@@ -6,8 +6,8 @@ TrelloClone.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     "boards": "indexBoards",
-    "boards/:id": "showBoard",
-    "boards/new": "newBoards"
+    "boards/new": "newBoards",
+    "boards/:id": "showBoard"
   },
 
   indexBoards: function() {

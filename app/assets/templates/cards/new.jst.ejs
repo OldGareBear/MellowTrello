@@ -1,0 +1,9 @@
+<form class="new-card">
+  <label for="card_title"></label>
+  <input type="text" id="card_title" name="vard[title]" value="Add a card...">
+
+  <input type="hidden" name="card[list_id]" value="<%= list.id %>">
+  <input type="hidden" name="card[ord]" value="<%= list.nextOrd() %>">
+
+  <input id="submit-new-card" type="submit" value="Save">
+</form>

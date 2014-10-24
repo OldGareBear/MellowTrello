@@ -1,8 +1,8 @@
-TrelloClone.Views.CardIndex = Backbone.View.extend({
-  template: JST[""],
+TrelloClone.Views.IndexCards = Backbone.View.extend({
+  template: JST["cards/index"],
 
   render: function() {
-    content = this.template({
+    var content = this.template({
       cards: this.collection
     });
 

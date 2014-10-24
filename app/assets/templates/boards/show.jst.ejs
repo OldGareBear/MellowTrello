@@ -8,14 +8,15 @@
 
 <div class="all-lists">
   <% board.lists().each(function(list) { %>
-  <div class="one-list">
-    <p><%= list.get("title") %></p>
-    <button class="destroy-list" id="<%= list.id %>">
-      Delete
-    </button>
+  <div class="one-list" id="<%= list.id %>">
 
+    <p><%= list.get("title") %></p>
     <button class="new-card">Add new card</button>
-    <div id="insert-cards"></div>
+
+    <div id="insert-cards">
+      <!-- this is where card index view lives -->
+    </div>
+
   </div>
   <% }) %>
 </div>

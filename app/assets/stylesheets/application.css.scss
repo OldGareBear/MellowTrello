@@ -43,6 +43,7 @@ div.one-list {
   margin: 5px;
   background-color: #CCC;
   width:250px;
+	border-radius: 5px;
 }
 
 div.one-list > p {
@@ -67,4 +68,12 @@ input#submit-new-list, input#submit-new-card {
   background-color: green;
   color: white;
   font-weight: bold;
+}
+
+div.cards-index > p {
+	display: block;
+	background-color: white;
+	text-align: center;
+	border-radius: 5px;
+	margin: 10px 0 10px 0;
 }

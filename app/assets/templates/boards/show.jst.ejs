@@ -1,11 +1,6 @@
 
 <h1><%= board.escape("title") %></h1>
 
-
-<p>This board was created by User #<%= board.escape("user_id") %></p>
-
-<h2>Lists</h2>
-
 <div class="all-lists">
   <% board.lists().each(function(list) { %>
   <div class="one-list" id="<%= list.id %>">

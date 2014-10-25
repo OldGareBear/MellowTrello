@@ -18,9 +18,9 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
 
     this.$el.html(content);
 		
-		this.$('#all-lists').sortable();
+		this.$('.one-list').sortable();
 		
-		this.$('.list-cards').sortable({connectWith: '.list-cards'});
+		this.$('.list-cards').sortable({connectWith: '.one-list'});
 
     var that = this;
 		

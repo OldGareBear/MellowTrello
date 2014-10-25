@@ -11,6 +11,8 @@ TrelloClone.Views.IndexCards = Backbone.View.extend({
     var content = this.template({
       cards: this.collection
     });
+		
+		this.$('div.card').sortable({connectWith: 'div.card'});
 
     this.$el.html(content);
 

@@ -1,3 +1,6 @@
 <% cards.each(function(card) { %>
-<p><%= card.get("title") %><p>
+<div class="card">
+	<%= card.get("title") %>
+	<span class="delete-button" id="<%= card.id %>">x</span>
+</div>
 <% }) %>

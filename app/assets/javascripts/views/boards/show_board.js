@@ -21,8 +21,6 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
     var that = this;
 		
     this.lists.each(function(list) {
-			console.log(list.cards())
-			
       var newView = new TrelloClone.Views.IndexCards({
         collection: list.cards()
       });

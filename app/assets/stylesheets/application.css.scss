@@ -79,6 +79,11 @@ div.card {
 	display:relative;
 }
 
+div.card:hover {
+	background-color: #F0F0F0;
+	cursor: pointer;
+}
+
 div.cards-index {
 	position: relative;
 }
@@ -94,6 +99,6 @@ span.delete-button.visible {
 }
 
 span.delete-button.visible:hover {
-	color: green;
+	color: red;
 	cursor: pointer;
 }

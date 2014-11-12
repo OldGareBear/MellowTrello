@@ -2,17 +2,19 @@ TrelloClone.Views.IndexCards = Backbone.View.extend({
 	initialize: function() {
 		this.listenTo(this.collection, "add sync destroy", this.render)
 	},
-	
+
+	id: "container",
+
   template: JST["cards/index"],
-	
+
 	className: "cards-index",
 
   render: function() {
     var content = this.template({
       cards: this.collection
     });
-		
-		this.$('div.card').sortable({connectWith: 'div.card'});
+
+		this.$(".sortable").sortable();
 
     this.$el.html(content);
 
@@ -30,12 +32,12 @@ TrelloClone.Views.IndexCards = Backbone.View.extend({
 		var deleteButton = $(event.target).children().eq(0);
 		deleteButton.addClass('visible')
 	},
-	
+
 	removeCardDelete: function(event) {
 		var deleteButton = $(event.target).children().eq(0);
 		deleteButton.removeClass('visible')
 	},
-	
+
 	destroyCard: function(event) {
 		var card_id = $(event.target).attr("id");
 		var card = this.collection.get(card_id);

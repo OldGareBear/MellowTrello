@@ -1,6 +1,8 @@
+<div class="sortable">
 <% cards.each(function(card) { %>
 <div class="card">
 	<%= card.get("title") %>
 	<span class="delete-button" id="<%= card.id %>">x</span>
 </div>
 <% }) %>
+</div>

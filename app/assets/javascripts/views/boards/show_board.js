@@ -17,18 +17,18 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
     });
 
     this.$el.html(content);
-		
+
 		this.$('.one-list').sortable();
-		
+
 		this.$('.list-cards').sortable({connectWith: '.one-list'});
 
     var that = this;
-		
+
     this.lists.each(function(list) {
       var newView = new TrelloClone.Views.IndexCards({
         collection: list.cards()
       });
-      
+
       this.$('div#insert-cards-' + list.id).html(newView.render().$el);
       that.subViews.push(newView);
     });

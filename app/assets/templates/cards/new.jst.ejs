@@ -1,11 +1,11 @@
 <form class="new-card">
   <label for="card_title"></label>
-  <input type="text" id="card_title" name="card[title]" value="Add a title...">
+  <input type="text" id="card_title" name="card[title]" placeholder="Add a title...">
 
   <input type="hidden" name="card[list_id]" value="<%= list.id %>">
   <input type="hidden" name="card[ord]" value="<%= list.nextOrd() %>">
 
-  <input type="text" name="card[description]" value="Add a description...">
+  <input type="text" name="card[description]" placeholder="Add a description...">
 
   <input id="submit-new-card" type="submit" value="Save">
 </form>
